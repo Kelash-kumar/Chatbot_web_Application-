@@ -76,27 +76,43 @@ const Nav = () => {
 
         {isUserLoggedIn ? (
           <div className="flex">
-          <Image
-            src="/assets/images/logo.svg"
-            width={30}
-            height={30}
-            alt="logo"
-            className="object-contain  rounded-full cursor-pointer"
-            onClick={() => setToggleDropdown(!toggleDropdown)}
-          />
-          {
-            toggleDropdown && (
-              <div className="absolute top-10 text-black p-3 right-0 bg-white shadow-md rounded-md "
-                      style={{width: "200px"}}
+            <Image
+              src="/assets/images/logo.svg"
+              width={30}
+              height={30}
+              alt="logo"
+              className="object-contain  rounded-full cursor-pointer"
+              onClick={() => setToggleDropdown(!toggleDropdown)}
+            />
+            {toggleDropdown && (
+              <div
+                className="absolute top-12 text-black p-3 right-0 bg-white shadow-md rounded-md  "
+                style={{
+                  width: "200px",
+                  boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+                }}
               >
-                <Link  href="/Profile" className="w-full text-left "
-                >Profile</Link>
-                <button className='w-full  text-left hover:bg-gray-200 rounded' 
-                onClick={() => signOut()}
-                >Sign out</button>
+                <Link
+                  href="/Profile"
+                  className="w-full rounded block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-300 dark:hover:text-white "
+                >
+                  Profile
+                </Link>
+                <Link
+                  href="/Profile"
+                  className="w-full rounded block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-300 dark:hover:text-white "
+                >
+                  Prompt
+                </Link>
+                <button
+                  className="w-full  text-left mt-5 black_btn 
+                hover:bg-gray-200 rounded"
+                  onClick={() => signOut()}
+                >
+                  Sign out
+                </button>
               </div>
-            )
-          }
+            )}
           </div>
         ) : (
           <>
